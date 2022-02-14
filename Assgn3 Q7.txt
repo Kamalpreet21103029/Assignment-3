@@ -1,0 +1,19 @@
+def fibon():
+  a=int(input("Enter the Number upto which the Number of the terms of Fibonacci Sequence are required=")
+  print("The Fibonacci sequence is")
+  count=0
+  sum=0
+  if a>0:
+    curr=1
+    prev=1
+    for i in range(a-2):
+      curr,prev=curr+prev,curr
+      count=count + 1
+      sum=sum+curr
+      print("The Serial number,value of the term and the sum of terms upto this term are=")
+      print(count,curr,sum)
+   print("The average of the resultant series is=",sum/count)
+  else:
+   print("The Invalid Input has been entered/nEnter Valid Input")
+  return fibon()
+fibon()

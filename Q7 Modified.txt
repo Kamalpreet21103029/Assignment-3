@@ -1,0 +1,28 @@
+def fib():
+  n=int(input("Enter the Number upto which the Number of the terms of Fibonacci Sequence are required="))
+  lst=[0,1,1]
+  if n==0:
+   print("The Fibonnaci Sequence is=[0]")
+   print("The average of the resultant series is=0")
+  elif n==1:
+   print("The Fibonnaci Sequence is=[0,1]")
+   print("The average of the resultant series is=0.5")
+  elif n==2:
+   print("The Fibonnaci Sequence is=[0,1,1]")
+   print("The average of the resultant series is=0.67")
+  elif n>2:
+      temp = 1
+      prev = 1
+      for i in range(n - 2):
+          curr = temp + prev
+          prev = temp
+          temp = curr
+          # prev=temp
+          lst.append(curr)
+      print("The Fibonacci Sequence is", end=" ")
+      print(lst)
+      print("The average of the resultant series is=", sum(lst) / n + 1)
+  else:
+      print("Invalid value of n has been entered")
+      return fib()
+fib()

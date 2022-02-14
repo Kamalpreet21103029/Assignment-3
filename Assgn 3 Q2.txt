@@ -1,0 +1,42 @@
+# Taking year input from user
+year = int(input("Enter the year: \n"))
+# Checking for leap year
+#If a year is divisible by 100 then to check whether it is a leap year we divide it by 400
+#But If a year is not divisible by 100 then to check whether it is a leap year we divide it by 4
+if (year % 400 == 0) and (year % 100 == 0):
+    leap_year = True
+elif (year % 4 == 0) and (year % 100 != 0):
+    leap_year = True
+else:
+    leap_year = False
+
+# Taking Month input from user
+month = int(input("Enter the month from 1 to 12: \n"))
+
+# Checking for 30 day's month and 28 day's and 29 day's of february
+if month in (1, 3, 5, 7, 8, 10, 12):  # for 31 day's months checking
+    month_length = 31
+elif month == 2:  # for february month checking of leap year
+    if leap_year:
+        month_length = 29
+    else:
+        month_length = 28
+else:  # for exception from above months
+    month_length = 30
+
+# Taking input day from user
+day = int(input("Enter the day [1-31]: \n"))
+
+# checking for new year date
+
+if day < month_length:  # for checking of last day
+    day = day+1
+else:
+    day = 1
+    if month == 12:
+        month = 1
+        year = year + 1  # increament for new year
+    else:
+        month = month + 1  # increament for new month
+ # printing the next day
+print("The next date is  [dd-mm-yyyy] :::: %d-%d-%d." % (day, month, year))

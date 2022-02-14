@@ -1,0 +1,19 @@
+#A Program is made to Evaluate and Print the Grade and Performance of Students according to the Grade points entered by Them
+a=float(input("Enter the Grade point="))
+if (a//1== 10):
+ print("The Student Grade is A+ and His/Her Performance is Outstanding ")
+elif(a//1 == 9):
+ print("The Student Grade is A and His/Her Performance is Excellent ")
+elif(a//1 == 8):
+ print("The Student Grade is B+ and His/Her Performance is Very Good")
+elif(a//1 == 7):
+ print("The Student Grade is B and His/Her Performance is Good ")
+elif(a//1 == 6):
+ print("The Student Grade is C+ and His/Her Performance is Average ")
+elif(a//1 == 5):
+ print("The Student Grade is C and His/Her Performance is Below Average ")
+elif(a//1 == 4):
+ print("The Student Grade is D and His/Her Performance is Poor ")
+else:
+ print("The User has Entered an invalid input")
+   

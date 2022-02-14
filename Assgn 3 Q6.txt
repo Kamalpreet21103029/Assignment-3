@@ -1,0 +1,51 @@
+#A Program making class list and Using Students SID as Key and Student name as a Value
+class_list = dict() 
+print("Make Sure every Student enters a unique SID")
+ask_1 = int(input("Enter your SID \n"))#Asking for input from User which will be used as a Key
+ask_2 = input("Enter your name\n") #Asking for input from User which will be used as a Value
+class_list[ask_1] = [ask_2] #Creating a Dictionary with Key as SID's and Value as Student's name
+ask_123 = input("If you want us to ask your SID again then enter'Y' and for not again enter'N'\n")
+    # Looping done to have as many input as the User wants
+
+while True :
+  if ask_123 == 'Y':
+   ask_1 = int(input("Enter your SID\n"))
+   ask_2 = input("Enter your name\n")
+   class_list[ask_1] = [ask_2]
+  elif ask_123 == 'N': 
+    break #Used for breaking the iteration or looping and go outside the body of the iteration
+  else:
+    print("Invalid Input has been entered") 
+
+#Part1:------
+print("Part1:------")
+print("List of SID with name")
+print(class_list)  #Printing the Key Value pairs of the Dictionary Class_list
+#Part2:------
+print("Part2:------")
+print("Sorting by student name")
+# sorted by name and printing it
+print(sorted(class_list.items(), key=lambda kv: (kv[1], kv[0])))#Concept done in Looping and Dictionaries
+
+
+#Part3: ------
+print("\n")
+print("Part3: ------")
+print("Sorting by SID")
+class_list2 = sorted(class_list.items())  #Sorting by SID
+print(class_list2)  
+#Part4:---
+print("Part4:---")
+# Searching Students name 
+key_2 = input("Enter Y to search name by SID and 'N for not searching'\n")
+if key_2 == 'Y':
+    key = int(input("Enter SID you want to find\n")) 
+    if key in class_list:  
+        print('The name is:', class_list[key])  
+    else:
+        print('That key is not in the dictionary.') 
+elif key_2 == 'N':
+    print("You have ended the search")
+
+else:
+    print("Invalid input has been entered")

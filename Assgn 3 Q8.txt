@@ -1,0 +1,31 @@
+# Sets Mentioned in the Question
+Set1 = {1, 2, 3, 4, 5}
+Set2 = {2, 4, 6, 8}
+Set3 = {1, 5, 9, 13, 17}
+#Part1:----
+print("Part1:----A new set of all elements that are in Set1 and Set2 but not both")
+# Creating a Set having all Elements of A and B but not of Both=(A-B)U(B-A)=All - Common =(AUB)-(A Intersection B)
+Required_Set1 = ((Set1 | Set2)-(Set1 & Set2))
+print(Required_Set1)
+#Part2:----
+print("Part2:----A new set of all elements that are in only one of the three sets Set1, Set2 and Set3")
+# Subtracting intersection of sets taken two at a time from the union of all three sets=All-All common elements
+Required_Set2= ((Set1 | Set2 | Set3)-(Set1 & Set2)-(Set2 & Set3) - (Set3 & Set1))
+print(Required_Set2)
+# Part3:----
+# Making sum of common element from taking two set at a time out of three set But as the elements common in all three also get counted so removing them
+print("Part3:----A new set of elements that are exactly two of the sets Set1, Set2 and Set3")
+Required_Set3= ((Set1 & Set2) | (Set2 & Set3) | (Set3 & Set1))-(Set1 & Set2 & Set3)
+print(Required_Set3)
+# Part4:----
+#Creating a universal set for Set1 , Set 2 and Set3 
+Univ_Set= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print("Part4:----A new set of all integers in the range 1 to 10 that are not in Set1")
+Required_Set4= ((Univ_Set)-Set1)
+# Subtrating Set1 from Univ_Set
+print(Required_Set4)
+# Part5:----
+print("Part5:----A new set of all integers in the range 1 to 10 that are not in Set1, Set2 and Set3")
+# Subtrating union of all three sets from Univ_Set
+Required_Set5= ((Univ_Set)-(Set1 | Set2 | Set3))
+print(Required_Set5)

@@ -1,0 +1,12 @@
+#A Program to Check the occurrence of words in a sentence
+print("Make sure that a sentence is entered")
+p=str(input("Enter a sentence="))
+r=p.upper()
+dic=dict()#Initialising a Dictionary
+words=r.split(" ") #Splits the letters in the string and creates a list
+for i in words: 
+    if i in dic: #Checks if the word is present in the Dictionary or not
+      dic[i]+= 1 
+    else:
+      dic[i]=1 #adds the word to the dictionary
+print("No. of occurences of each word in the sentence entered is:\n",dic)

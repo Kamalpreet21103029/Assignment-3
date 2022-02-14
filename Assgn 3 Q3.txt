@@ -1,0 +1,10 @@
+p=int(input("Enter 1st number="))
+q=int(input("Enter 2nd number="))
+r=int(input("Enter 3rd number="))
+def square(a):
+    sqr=a*a
+    return sqr
+lst=[p,q,r]
+print("The list of the input numbers by the user is=",lst)
+lst1=[square(p),square(q),square(r)]
+print("The List of tuples of pairs with their corresponding square are",list(zip(lst,lst1)))
